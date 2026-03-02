@@ -9,31 +9,31 @@
 - **目標比率の設定**: 資産ごとの理想的な配分比率（%）を指定。
 - **リバランス計算ロジック**: 
   - 現在の合計資産額を維持したまま、目標比率にするための「不足額/超過額」を自動計算。
-    - 「何を何円買い増し、何を何円売却すべきか」を一目で確認。
-    - **2つの円グラフ比較**: 
-      - 「現在の資産構成」と「リバランス後の理想構成」を並べて表示。
-      - **PWA対応**: スマホのホーム画面からアプリとして起動可能。
+  - 「何を何円買い増し、何を何円売却すべきか」を一目で確認。
+- **2つの円グラフ比較**: 
+  - 「現在の資産構成」と「リバランス後の理想構成」を並べて表示。
+- **PWA対応**: スマホのホーム画面からアプリとして起動可能。
 
 ## 🧮 計算仕様（リバランスロジック）
 
-      1. **合計資産額 ($V_{total}$)**:
-         $$V_{total} = \sum (\text{各資産の現在額})$$
-         2. **各資産の目標額 ($V_{target, i}$)**:
-            $$V_{target, i} = V_{total} \times \left( \frac{\text{目標比率}_i}{100} \right)$$
-            3. **リバランス必要額 ($\Delta V_i$)**:
-               $$\Delta V_i = V_{target, i} - \text{現在額}_i$$
-                  - 正の値：買い増しが必要
-                     - 負の値：売却が必要
+1. **合計資産額 ($V_{total}$)**:
+   $$V_{total} = \sum (\text{各資産の現在額})$$
+2. **各資産の目標額 ($V_{target, i}$)**:
+   $$V_{target, i} = V_{total} \times \left( \frac{\text{目標比率}_i}{100} \right)$$
+3. **リバランス必要額 ($\Delta V_i$)**:
+   $$\Delta V_i = V_{target, i} - \text{現在額}_i$$
+   - **正の値**: 買い増しが必要
+   - **負の値**: 売却が必要
 
 ## 🛠 技術スタック
 
-                     - **Frontend**: Next.js (App Router)
-                     - **Styling**: Tailwind CSS
-                     - **UI Components**: shadcn/ui (Lucide-react)
-                     - **Charts**: Recharts
-                     - **Deployment**: Vercel
+- **Frontend**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Lucide-react)
+- **Charts**: Recharts
+- **Deployment**: Vercel
 
 ## 📱 開発方針
-                     - **Mobile First**: すべての操作をスマホの片手操作で完結させる。
-                     - **Single Page App**: 複雑な遷移を避け、1画面で入力から結果確認まで行える。
-                     
+
+- **Mobile First**: すべての操作をスマホの片手操作で完結させる。
+- **Single Page App**: 複雑な遷移を避け、1画面で入力から結果確認まで行える。
